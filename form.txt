@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>validing form</title>
+        <style>
+            td{
+                border: 2px solid black;
+                padding: 20px;
+            }
+            .container{
+                border: 1px solid white;
+                padding-top: 10px;
+                padding-left: 40%;
+            }
+            input{
+                margin-left: 12px;
+            }
+        </style>
+    </head>
+   
+    <body>
+        <div class="container">
+            <h1 class="heading" > VALIDATION FORM</h1>
+        <table>
+            <td >
+<br>
+<div>
+ <label>NAME : </label> <input type="text" id="name">  <span id="ss" style="color:red;backgroundColor:red">that name is not original enough</span><br><br>
+<label>AGE : </label> <input type="text" id="age"><span id="ss" style="color:red;backgroundColor:red">Ahh, 32, a wise age</span><br><br>
+<label>BIRTH DATE : </label> <input type="text" id="bd"><br><br>
+<label>EMAIL : </label> <input type="text" id="id"><span id="ss" style="color:red;backgroundColor:red">email is required</span><br><br>
+ <div><label>CONTINENT : </label><span id="ss" style="color:red;backgroundColor:red">continent is required</span>
+<select>
+<option value="ASIA">ASIA</option>
+<option value="NORTH AMERICA">NORTH AMERICA</option>
+<option value="SOUTH AMERICA">SOUTH AMERICA</option>
+<option value="EUROPE">EUROPE</option>
+<option value="AUSTRALIA">AUSTRALIA</option>
+</select>
+ </div><br>
+<label>Are you cool?   </label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="yes"><label for="Fiv1e">yes  </label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="no"><label for="Fiv1e">no</label><span id="ss" style="color:red;backgroundColor:red">Are yoy coll?is required</span><br><br>
+
+
+<label for="One">what do you like?   </label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="yes"><label for="Fiv1e">codelgniter  </label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="no"><label for="Fiv1e">fuel</label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="yes"><label for="Fiv1e">kohana </label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="no"><label for="Fiv1e">laravel</label>
+<input type="checkbox" id="Fiv1e" name="ChooseMany" value="no"><label for="Fiv1e">zend</label><span id="ss" style="color:red;backgroundColor:red">what do you like?is required</span><br><br>
+<center><input type="submit" onclick="check()"></center><br><br>
+<script>
+function uname(){
+            var x=document.getElementById('name').value;
+            var a=/[a-z A-Z]/g
+            if(x.match(a))
+                return true;
+            else{
+               <span id="ss" style="color:red;backgroundColor:red">that name is not original enough</span>;
+            }
+         };
+         function uage(){
+            var x=document.getElementById('age').value;
+            if(x!=32)
+                return true;
+            else{
+                alert("cool age");
+            }
+         };
+         function ubirthdate(){
+            var x=document.getElementById('bd').value;
+            var a=/[0-9]/g
+            if(x.match(a))
+                return true;
+            else{
+                alert("invalid");
+            }
+         };
+         function mid(){
+            var x=document.getElementById('id').value;
+            var a=/^[a-z A-Z 0-9 @+.-]+@[a-z A-Z 0-9 @+.-]+(?:\.[a-zA-Z0-9])*$/g;
+            if(x.match(a))
+            return true;
+            else
+            alert("invalid email");
+         };
+         function check(){
+            if(uname()==true){
+                if(uage()==true){
+                    if(ubirthdate()==true){
+                                    if(mid()==true){
+                                        alert("REGISTERED SUCCESSFULLY");
+                                    };
+                                };
+                            };
+                        };
+         };
+        </script>
+    </body>
+</html>
